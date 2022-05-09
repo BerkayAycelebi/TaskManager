@@ -5,37 +5,34 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-@ViewBag.UID
-<h4>Task</h4>
+
+<h4 style="color:green">Görev Ekle</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
+                Başlık:
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+               Açıklama:
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsDone" /> @Html.DisplayNameFor(model => model.IsDone)
-                </label>
-            </div>
+          
+                    <input class="form-check-input" asp-for="IsDone" hidden /> 
+           
             <div class="form-group">
-                <label asp-for="ExecutionDate" class="control-label"></label>
+              Planlanan Tarih:
                 <input asp-for="ExecutionDate" class="form-control" />
                 <span asp-validation-for="ExecutionDate" class="text-danger"></span>
             </div>
           
                 <div class="form-group">
-                    <label asp-for="UserId" class="control-label"></label>
+                 
 
                     <select  asp-for="UserId" class="form-control" hidden asp-items="ViewBag.UserId" style="unvi"></select>
                 </div>
@@ -43,14 +40,14 @@
 
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Kaydet" class="btn btn-outline-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-warning">Listeye Dön</a>
 </div>
 
 @section Scripts {
