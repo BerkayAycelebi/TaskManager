@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TaskManager.Models;
 
 namespace TaskManager.Data
 {
@@ -12,5 +13,8 @@ namespace TaskManager.Data
             : base(options)
         {
         }
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Task> Tasks { get; set; }
     }
 }
